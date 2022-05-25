@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/score_counter"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTeamA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/team_a"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="80dp"
+        android:text="@string/team_b"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_teamA"
+        android:layout_width="0dp"
+        android:layout_height="220dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        app:cardBackgroundColor="@android:color/holo_orange_dark"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/cv_teamB"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewTeamA">
+
+        <TextView
+            android:id="@+id/tv_score_teamA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/_0"
+            android:textColor="@android:color/white"
+            android:textSize="80sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_teamB"
+        android:layout_width="0dp"
+        android:layout_height="220dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        app:cardBackgroundColor="@android:color/holo_blue_dark"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cv_teamA"
+        app:layout_constraintTop_toBottomOf="@id/textViewTeamA">
+
+        <TextView
+            android:id="@+id/tv_score_teamB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/_0"
+            android:textColor="@android:color/white"
+            android:textSize="80sp" />
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_plus_teamA"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/white"
+        android:background="@drawable/bg_button_team_a"
+        android:text="@string/_1"
+        app:layout_constraintEnd_toEndOf="@+id/cv_teamA"
+        app:layout_constraintStart_toStartOf="@+id/cv_teamA"
+        app:layout_constraintTop_toBottomOf="@+id/cv_teamA" />
+
+    <Button
+        android:id="@+id/btn_minus_teamA"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_button_team_a"
+        android:text="@string/_1min"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/cv_teamA"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/cv_teamA"
+        app:layout_constraintTop_toBottomOf="@+id/btn_plus_teamA" />
+
+    <Button
+        android:id="@+id/btn_plus_teamB"
+        android:layout_width="0dp"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_button_team_b"
+        android:text="@string/_1"
+        app:layout_constraintEnd_toEndOf="@+id/cv_teamB"
+        app:layout_constraintStart_toStartOf="@+id/cv_teamB"
+        app:layout_constraintTop_toBottomOf="@+id/cv_teamB" />
+
+    <Button
+        android:id="@+id/btn_minus_teamB"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/white"
+        android:background="@drawable/bg_button_team_b"
+        android:text="@string/_1min"
+        app:layout_constraintEnd_toEndOf="@+id/cv_teamB"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/cv_teamB"
+        app:layout_constraintTop_toBottomOf="@+id/btn_plus_teamB" />
+
+    <Button
+        android:id="@+id/btn_reset"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/bg_button_reset"
+        android:text="@string/reset"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/btn_minus_teamB"
+        app:layout_constraintStart_toStartOf="@+id/btn_minus_teamA"
+        app:layout_constraintTop_toBottomOf="@+id/btn_minus_teamA" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
